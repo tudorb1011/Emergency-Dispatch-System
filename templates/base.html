@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Emergency Dispatch System</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .emergency-card {
+            border-left: 4px solid #dc3545;
+            margin-bottom: 1rem;
+        }
+        .unit-available { border-left-color: #28a745; }
+        .unit-busy { border-left-color: #ffc107; }
+        .status-logged { color: #6c757d; }
+        .status-dispatched { color: #007bff; }
+        .status-en-route { color: #ffc107; }
+        .status-on-scene { color: #fd7e14; }
+        .status-completed { color: #28a745; }
+        .navbar-brand { font-weight: bold; }
+        .stats-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('index') }}">
+                <i class="fas fa-ambulance me-2"></i>Emergency Dispatch System
+            </a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="{{ url_for('index') }}">
+                    <i class="fas fa-tachometer-alt me-1"></i>Dashboard
+                </a>
+                <a class="nav-link" href="{{ url_for('log_call') }}">
+                    <i class="fas fa-phone me-1"></i>Log Call
+                </a>
+                <a class="nav-link" href="{{ url_for('statistics_page') }}">
+                    <i class="fas fa-chart-bar me-1"></i>Statistics
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        {% block content %}{% endblock %}
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Auto-refresh dashboard every 30 seconds
+        if (window.location.pathname === '/') {
+            setInterval(() => {
+                if (!document.hidden) {
+                    location.reload();
+                }
+            }, 30000);
+        }
+    </script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

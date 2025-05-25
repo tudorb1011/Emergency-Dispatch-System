@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>System Statistics Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        h1 { color: #333; }
+        pre { background: #f8f9fa; padding: 1em; }
+    </style>
+</head>
+<body>
+    <h1>System Statistics Report</h1>
+    <pre>{{ stats | tojson(indent=2) }}</pre>
+</body>
+</html>
