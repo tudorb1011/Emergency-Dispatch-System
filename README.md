@@ -17,13 +17,6 @@ This project is a Python-based simulation and analysis model of a **Computer-Aid
 - Object-Oriented Design
 - UML-based Modeling (Use Case, Sequence, Activity Diagrams)
 
-##  Structure
-
-- `dispatcher.py` – Handles call logging and dispatch coordination.
-- `cad_system.py` – Manages core data structures and business logic.
-- `emergency_units/` – Contains unit classes for Police, Fire, and EMS.
-- `reports/` – Facilitates statistics generation and incident reporting.
-
 
 ##  Use Case Examples
 
