@@ -13,10 +13,9 @@ This project is a Python-based simulation and analysis model of a **Computer-Aid
 
 ## Technologies
 
-- Python 3.x
+- Python
 - Object-Oriented Design
 - UML-based Modeling (Use Case, Sequence, Activity Diagrams)
-- Modular Architecture Pattern
 
 ##  Structure
 
